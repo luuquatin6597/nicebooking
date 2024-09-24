@@ -1,0 +1,132 @@
+.img-gallery {
+    @media screen and (min-width: 768px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .slider {
+        .slick-track {
+            display: flex !important;
+        }
+
+        .slick-slide {
+            height: 450px;
+            cursor: pointer;
+            @media screen and (max-width: 767px) {
+                max-height: 300px;
+            }
+        }
+        .slick-arrow {
+            &.slick-prev {
+                left: -11px;
+            }
+            &.slick-next {
+                right: -11px;
+            }
+        }
+    }
+}
+
+.hotel-detail {
+    .hotel {
+        &-name {
+            h1 {
+                font-size: 35px;
+            }
+        }
+        &-rating {
+            gap: 10px;
+            .starts {
+                gap: 5px;
+                i {
+                    width: auto;
+                    height: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    &::before {
+                        color: rgb(255, 201, 23);
+                        font-size: 20px;
+                    }
+                }
+            }
+            .text {
+                font-size: 18px;
+            }
+        }
+    }
+    @media screen and (max-width: 1199px) {
+        .row {
+            flex-direction: column-reverse;
+            gap: 1.5rem;
+        }
+    }
+}
+
+.hotel-info {
+    i {
+        width: 30px;
+    }
+}
+
+.inforBooking {
+    border-radius: 30px;
+    .per {
+        font-size: 16px;
+    }
+}
+
+.quantity {
+    button {
+        width: 30px;
+        &.disabled {
+            opacity: 0.5;
+        }
+        i::before {
+            vertical-align: 4px;
+        }
+    }
+    input {
+        width: 38px;
+    }
+}
+
+.price {
+    span {
+        &.root {
+            margin-top: 6px;
+        }
+        &.sale {
+            color: rgb(238, 39, 39);
+            line-height: 1;
+        }
+    }
+}
+
+.policies {
+    .nav {
+        .nav {
+            &-item {
+            }
+            &-link {
+                color: rgba(0, 0, 0, 0.5);
+                &.active {
+                    border-top-left-radius: 12px;
+                    border-top-right-radius: 12px;
+                    color: var(--bs-body-color);
+                }
+                &:hover {
+                    border-top-left-radius: 12px;
+                    border-top-right-radius: 12px;
+                }
+            }
+        }
+    }
+    .tab-content {
+        .tab {
+            &-pane {
+                padding: 20px 0;
+            }
+        }
+    }
+}

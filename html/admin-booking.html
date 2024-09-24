@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NICE Booking</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+
+    <script src="../js/admin.js"></script>
+    <script src="../js/admin-booking.js"></script>
+
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/common.css">
+
+
+    <style>
+        :root {
+            --bs-nav-link-font-size: 20px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="sidebar py-3 h-100 bg-white">
+            <div class="d-flex flex-column flex-shrink-0 p-3 rounded shadow h-100">
+                <a href="#"
+                    class="logo d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none pb-3">
+                    <span class="fs-4"><b class="nice">NICE</b><span class="booking">BOOKING</span></span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-auto gap-2">
+                    <li class="nav-item">
+                        <a href="admin.html" class="nav-link link-body-emphasis" aria-current="page">
+                            <i class="bi bi-house-door ml-1"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-hotel.html" class="nav-link link-body-emphasis">
+                            <i class="bi bi-list-ul"></i>
+                            Hotel
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-booking.html" class="nav-link active">
+                            <i class="bi bi-calendar"></i>
+                            Booking
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-user.html" class="nav-link link-body-emphasis">
+                            <i class="bi bi-people"></i>
+                            Users
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="dropdown text-end" id="currentUser">
+                </div>
+            </div>
+        </div>
+
+        <div class="content row py-3">
+            <div class="col-12">
+                <div
+                    class="actionBar d-flex gap-3 rounded shadow w-100 flex justify-content-between align-items-center p-3">
+                    <input class="searchInput form-control rounded m" type="search" placeholder="Search"
+                        aria-label="Search">
+
+                    <!-- <button class="btn btn-primary rounded text-nowrap" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#canvasAddNew" aria-controls="offcanvasRight">Add new</button> -->
+                </div>
+            </div>
+
+            <div class="col-12 pt-3">
+                <div class="p-3 rounded shadow h-100 overflow-auto">
+                    <table class="table table-hover text-nowrap">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="px-3">ID</th>
+                                <th scope="col" class="px-3">Hotel ID</th>
+                                <th scope="col" class="px-3">Full name</th>
+                                <th scope="col" class="px-3">Email</th>
+                                <th scope="col" class="px-3">Phone</th>
+                                <th scope="col" class="px-3">Start</th>
+                                <th scope="col" class="px-3">End</th>
+                                <th scope="col" class="px-3">Adults</th>
+                                <th scope="col" class="px-3">Children</th>
+                                <th scope="col" class="px-3">Sale price</th>
+                                <th scope="col" class="px-3">Price</th>
+                                <th scope="col" class="px-3">Tax</th>
+                                <th scope="col" class="px-3">Total</th>
+                                <th scope="col" class="px-3">Payment</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBooking">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end overflow-auto" tabindex="-1" id="canvasAddNew"
+        aria-labelledby="offcanvasRightLabel">
+        <form id="addNewForm" action="#">
+            <div class="offcanvas-header">
+                <h5 class="mb-0">Add new</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control rounded" name="title" placeholder="Title" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="select" class="form-label">Type</label>
+                    <select class="form-select" aria-label="Select room" required>
+                        <option value="Single room" selected>Single room</option>
+                        <option value="Double room">Double room</option>
+                        <option value="Queen room">Queen room</option>
+                        <option value="Family room">Family room</option>
+                        <option value="Dorm">Dorm</option>
+                    </select>
+                </div>
+
+                <div class="input-group gap-3 flex-nowrap mb-3">
+                    <div class="div">
+                        <label for="maxBed" class="form-label">Bed</label>
+                        <input type="number" class="form-control rounded" name="maxBed" value="1" required>
+                    </div>
+                    <div class="div">
+                        <label for="maxPeople" class="form-label">People</label>
+                        <input type="number" class="form-control rounded" name="maxPeople" value="1" required>
+                    </div>
+                    <div class="div">
+                        <label for="maxBathroom" class="form-label">Bathroom</label>
+                        <input type="number" class="form-control rounded" name="maxBathroom" value="1" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control rounded" name="name" placeholder="Name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control rounded" name="address" placeholder="Address" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Google map</label>
+                    <textarea class="form-control rounded" name="map" placeholder="map" required></textarea>
+                </div>
+
+                <div class="input-group mb-3 flex-nowrap gap-3">
+                    <div class="">
+                        <label for="price" class="form-label align-content-center mb-0 me-3">Price</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control rounded-start" aria-label="Price" name="price"
+                                value="0" required>
+                            <span class="input-group-text">VND</span>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <label for="salePrice" class="form-label align-content-center mb-0 me-3">Sale price</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control rounded-start" aria-label="Sale Price"
+                                name="salePrice" value="0" required>
+                            <span class="input-group-text">VND</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-t">
+                    <label for="formFile" class="form-label">Image</label>
+
+                    <div class="preview-images-zone">
+                        <fieldset class="form-group border d-flex align-content-center justify-content-center bg-light">
+                            <a class="align-content-center text-center text-decoration-none color-primary w-100"
+                                href="javascript:void(0)" onclick="$('#pro-image').click()"><i
+                                    class="bi bi-plus-lg fs-1"></i></a>
+                            <input type="file" id="pro-image" name="pro-image" style="display: none;"
+                                class="form-control" multiple>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+
+            <div class="offcanvas-footer p-3 d-flex gap-3">
+                <button type="button" class="btn btn-secondary btn-lg w-100" data-bs-dismiss="offcanvas"
+                    data-bs-target="#canvasAddNew" aria-label="Close">Cancel</button>
+                <button type="submit" class="btn btn-primary btn-lg w-100">Add</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header justify-content-between">
+                    <h5 class="modal-title" id="deleteModalLabel">Warning</h5>
+                    <button type="button" class="btn close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Nội dung modal sẽ được hiển thị ở đây -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="submit-modal btn btn-danger btn-submit">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header justify-content-between">
+                    <h5 class="modal-title" id="logoutModalLabel">Logout</h5>
+                    <button type="button" class="btn close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you want to logout?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="submit-modal btn btn-danger btn-submit">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

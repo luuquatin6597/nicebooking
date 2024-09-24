@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NICE Booking - Product Detail</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="../js/admin.js"></script>
+    <script src="../js/detail.js"></script>
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/detail.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+
+</head>
+
+<body id="product-detail-page">
+    <header class="header py-3 bg-white">
+        <div class="container-fluid">
+            <div class="inner d-flex flex-nowrap align-items-center">
+                <div class="left d-flex align-items-center gap-1">
+                    <div class="navbar-light mb">
+                        <button
+                            class="burger navbar-toggler border-0 text-primary p-1 d-flex align-items-center justify-content-between"
+                            type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu"
+                            aria-controls="offcanvasLeft">
+                            <i class="bi bi-list fs-1"></i>
+                        </button>
+                    </div>
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu"
+                        aria-labelledby="offcanvasLeftLabel">
+                        <div class="offcanvas-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <nav class="navbar">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item"><a href="homepage.html" class="nav-link px-2">Home</a>
+                                    </li>
+                                    <li class="nav-item"><a href="category.html" class="nav-link px-2">Category</a>
+                                    </li>
+                                    <li class="nav-item"><a href="booking.html" class="nav-link px-2">Booking</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <a href="homepage.html"
+                        class="logo d-flex align-items-center mb-0 me-md-auto link-body-emphasis text-decoration-none pb-0">
+                        <span class="fs-3"><b class="nice">NICE</b><span class="booking">BOOKING</span></span>
+                    </a>
+                </div>
+
+                <nav class="pc center navbar navbar-expand-lg justify-content-center">
+                    <ul class="navbar-nav justify-content-center">
+                        <li class="nav-item"><a href="homepage.html" class="nav-link px-2">Home</a></li>
+                        <li class="nav-item"><a href="category.html" class="nav-link px-2">Category</a></li>
+                        <li class="nav-item"><a href="booking.html" class="nav-link px-2">Booking</a></li>
+                    </ul>
+                </nav>
+
+                <div class="right d-flex align-items-center justify-content-end gap-3">
+                    <!-- <div class="cart">
+                        <div class="rounded-circle p-2 text-center">
+                            <i class="bi bi-bag-heart"></i>
+                        </div>
+                    </div> -->
+
+                    <div class="dropdown text-end" id="currentUser">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="img-gallery">
+                    <div class="slider" id="slider">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hotel-detail container py-5">
+        <div class="row">
+            <div class="col-12 col-xl-8">
+                <div class="hotel-name">
+                    <h1></h1>
+                </div>
+
+                <div class="hotel-rating d-flex align-items-center">
+                    <div class="starts d-flex align-items-center">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <div class="text text-black-50">
+                        5 - 100 reviews
+                    </div>
+                </div>
+
+                <hr class="my-5">
+
+                <div>
+                    <p class="fs-4 fw-bold mb-2">This place have</p>
+                    <div class="maximum d-flex align-items-center gap-5 fs-5">
+                        <span class="people">People: 6</span>
+                        <span class="bed border-start border-end px-5">Bed: 3</span>
+                        <span class="bathroom">Bathroom: 2</span>
+                    </div>
+                </div>
+
+                <hr class="my-5">
+
+                <div>
+                    <p class="fs-4 fw-bold mb-2">What this place offers</p>
+                    <div class="hotel-offer d-grid gap-3 fs-5" style="grid-template-columns: repeat(3, 1fr)">
+                        <div class=" d-flex align-items-center gap-3">
+                            <i class="bi bi-wifi"></i>
+                            <p class="mb-0">Free wifi</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-water"></i>
+                            <p class="mb-0">Near beach</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-airplane"></i>
+                            <p class="mb-0">Near airport</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-cup-hot"></i>
+                            <p class="mb-0">Free coffee</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-moisture"></i>
+                            <p class="mb-0">Water heater</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-flower1"></i>
+                            <p class="mb-0">Have backyard</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-bank"></i>
+                            <p class="mb-0">Near bank</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-bicycle"></i>
+                            <p class="mb-0">Have bicycle</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-webcam"></i>
+                            <p class="mb-0">Have projector</p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-5">
+
+                <div class="policies">
+                    <p class="fs-4 fw-bold mb-2">Policies</p>
+                    <ul class="nav nav-tabs fs-5" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="guest-tab" data-bs-toggle="tab"
+                                data-bs-target="#guest-tab-pane" type="button" role="tab" aria-controls="guest-tab-pane"
+                                aria-selected="true">Guest
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="host-tab" data-bs-toggle="tab" data-bs-target="#host-tab-pane"
+                                type="button" role="tab" aria-controls="host-tab-pane"
+                                aria-selected="false">Host</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="fee-tab" data-bs-toggle="tab" data-bs-target="#fee-tab-pane"
+                                type="button" role="tab" aria-controls="fee-tab-pane" aria-selected="false">Service Fee
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="resolution-tab" data-bs-toggle="tab"
+                                data-bs-target="#resolution-tab-pane" type="button" role="tab"
+                                aria-controls="resolution-tab-pane" aria-selected="false">Dispute Resolution
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="tab-content fs-5" id="myTabContent">
+                        <div class="tab-pane fade show active" id="guest-tab-pane" role="tabpanel"
+                            aria-labelledby="guest-tab" tabindex="0">
+                            <b>Booking and Payment:</b> Guests must be at least 18 years old to book a listing.
+                            Guests must provide valid credit card information to secure a booking. Payment is due at
+                            the time of booking, and the guest's credit card will be charged for the full amount
+                            of the booking.
+
+                            <br />
+                            <br />
+
+                            <b>Cancellation Policy:</b> Guests can cancel a booking up to 24 hours before check-in
+                            without penalty. If a guest cancels a booking within 24 hours of check-in, they
+                            will be charged a cancellation fee of 80%.
+
+                            <br />
+                            <br />
+
+                            <b>Check-in and Check-out:</b> Check-in time is 2pm and check-out time is 12am. Guests must
+                            check out by the designated check-out time to avoid additional charges.
+
+                            <br />
+                            <br />
+
+                            <b>House Rules:</b> Guests must comply with all house rules, which are provided in the
+                            listing description and/or at the time of check-in.
+
+                            <br />
+                            <br />
+
+                            <b>Maximum Occupancy:</b> The maximum number of guests allowed in the listing is 10. Guests
+                            must not exceed this number without prior approval from the host.
+
+                            <br />
+                            <br />
+
+                            <b>Quiet Hours:</b> Guests must observe quiet hours from 7am to 10pm.
+
+                            <br />
+                            <br />
+
+                            <b>Smoking and Pets:</b> Smoking and pets are allowed in the listing.
+
+                            <br />
+                            <br />
+
+                            <b>Damages and Loss:</b> Guests are responsible for any damages or loss caused to the
+                            listing or its contents during their stay. Guests must report any damages or loss to
+                            the host immediately.
+                        </div>
+                        <div class="tab-pane fade" id="host-tab-pane" role="tabpanel" aria-labelledby="host-tab"
+                            tabindex="0">
+                            <b>Listing Accuracy:</b> Hosts must ensure that their listing description and photos
+                            accurately represent the listing.
+
+                            <br />
+                            <br />
+
+                            <b>Availability:</b> Hosts must ensure that the listing is available for the dates and times
+                            specified in the booking.
+
+                            <br />
+                            <br />
+
+                            <b>Cleanliness and Maintenance:</b> Hosts must ensure that the listing is clean and
+                            well-maintained for each guest's stay.
+
+                            <br />
+                            <br />
+
+                            <b>Communication:</b> Hosts must respond to guest inquiries and messages in a timely and
+                            professional manner.
+
+                            <br />
+                            <br />
+
+                            <b>Cancellation Policy:</b> Hosts can cancel a booking up to 24 hours before check-in
+                            without penalty. If a host cancels a booking within 24 hours of check-in, they will be
+                            charged a cancellation fee of 80%.
+                        </div>
+                        <div class="tab-pane fade" id="fee-tab-pane" role="tabpanel" aria-labelledby="fee-tab"
+                            tabindex="0">
+                            <b>Guest Service Fee:</b> A service fee of 20% will be charged to
+                            guests for each booking.
+
+                            <br />
+                            <br />
+
+                            <b>Host Service Fee:</b> A service fee of 20% will be charged to
+                            hosts for each booking.
+                        </div>
+                        <div class="tab-pane fade" id="resolution-tab-pane" role="tabpanel"
+                            aria-labelledby="resolution-tab" tabindex="0">
+                            <b>Dispute Resolution Process:</b> In the event of a dispute between a guest and a host,
+                            NICE BOOKING will provide a dispute resolution process to resolve the issue.
+
+                            <br />
+                            <br />
+
+                            <b>Dispute Resolution Fee:</b> A dispute resolution fee of 80% may be charged to the guest
+                            or host, depending on the outcome of the dispute resolution process.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div>
+                    <p class="fs-4 fw-bold mb-2">Address</p>
+                    <div class="hotel-info">
+                        <p class="d-flex align-items-center gap-1 mb-2 fs-5">
+                            <i class="bi bi-geo"></i>
+                            130 Dien Bien Phu Street, Chinh Gian Ward, Thanh Khe District, Da Nang City
+                        </p>
+                        <a href="tel:0123456789" class="d-flex align-items-center gap-1 mb-2 fs-5 text-decoration-none">
+                            <i class="bi bi-telephone"></i>
+                            0123 456 789
+                        </a>
+
+                        <iframe class="w-100"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4807.4654194650475!2d108.19639487595833!3d16.065950939523866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314218532acacd41%3A0xe476d0d67ba49586!2zMTMwIMSQaeG7h24gQmnDqm4gUGjhu6csIENow61uaCBHacOhbiwgVGhhbmggS2jDqiwgxJDDoCBO4bq1bmcgNTUwMDAwLCBWaWV0bmFt!5e1!3m2!1sen!2s!4v1726065244515!5m2!1sen!2s"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div> -->
+            </div>
+            <div class="col-12 col-xl-4">
+                <form class="inforBooking book-form p-3 shadow fs-5">
+                    <p class="price mb-3 d-flex align-items-center gap-2">
+                        <span class="sale fw-bold fs-2"></span>
+                        <span class="root text-decoration-line-through text-black-50"></span>
+                    </p>
+
+                    <div class="date-picker input-group gap-3 flex-nowrap mb-3">
+                        <div class="form-floating">
+                            <input class="form-control" type="text" id="dateStart" name="dateStart"
+                                placeholder="DD/MM/YYYY">
+                            <label for="dateStart" class="text-black-50">Start</label>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" type="text" id="dateEnd" name="dateEnd"
+                                placeholder="DD/MM/YYYY">
+                            <label for="dateEnd" class="text-black-50">End</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group gap-3 flex-nowrap align-items-center justify-content-between mb-3">
+                        <p class="mb-0 text-black-50">Adults</p>
+                        <div class="quantity d-flex align-items-center gap-1">
+                            <button type="button"
+                                class="btn minus border border-1 rounded-circle d-flex align-items-center justify-content-center disabled"
+                                disabled><i class="bi bi-dash"></i></button>
+                            <input type="number" name="adultsQuantity"
+                                class="form-control border-0 bg-white text-center p-0" value="1" readonly
+                                onchange="updateBookingDetails()">
+                            <button type="button"
+                                class="btn plus border border-1 rounded-circle d-flex align-items-center justify-content-center"><i
+                                    class="bi bi-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="input-group gap-3 flex-nowrap align-items-center justify-content-between">
+                        <p class="mb-0 text-black-50">Children</p>
+                        <div class="quantity d-flex align-items-center gap-1">
+                            <button type="button"
+                                class="btn minus border border-1 rounded-circle d-flex align-items-center justify-content-center disabled"
+                                disabled><i class="bi bi-dash"></i></button>
+                            <input type="number" name="childrenQuantity"
+                                class="form-control border-0 bg-white text-center p-0" value="0" readonly
+                                onchange="updateBookingDetails()">
+                            <button type="button"
+                                class="btn plus border border-1 rounded-circle d-flex align-items-center justify-content-center"><i
+                                    class="bi bi-plus"></i></button>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="estimate mb-3">
+                        <div class="sub-total d-flex align-items-center justify-content-between mb-1">
+                            <p class="mb-0 text-black-50">Sub total:</p>
+                            <p class="mb-0 "></p>
+                        </div>
+                        <div class="per d-flex align-items-center gap-1 mb-1 text-black-50 justify-content-end">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 rounded-pill fs-5">Book now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="also-like container py-5">
+        <div class="title row">
+            <div class="col-12">
+                <div class="title text-center mb-4">
+                    <h5 class="fs-1">You may also like</h5>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card-list slider">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="testimonials py-5">
+        <div class="container">
+            <div class="title row mb-5">
+                <div class="title text-center">
+                    <h5 class="fs-1">Customer Feedback</h5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-12 mb-3">
+                    <div class="testimonial-item d-flex gap-3">
+                        <img src="/assets/images/AT.jpg" class="testimonial-img rounded-circle" alt="Khách Hàng 1">
+                        <div class="testimonial-content">
+                            <h5>Lưu Quang Tính</h5>
+                            <div class="testimonial-rating d-flex align-items-center">
+                                <div class="starts d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                            </div>
+
+                            <p class="testimonial-text">"Excellent hotel with professional service and clean rooms. I
+                                will
+                                definitely come back next time!"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-12 mb-3">
+                    <div class="testimonial-item d-flex gap-3">
+                        <img src="/assets/images/AQ.jpg" class="testimonial-img rounded-circle" alt="Khách Hàng 2">
+                        <div class="testimonial-content">
+                            <h5>Nguyễn Đức Minh Quân</h5>
+                            <div class="testimonial-rating d-flex align-items-center">
+                                <div class="starts d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                            <p class="testimonial-text">"Convenient location, close to the city center. Friendly and
+                                hospitable staff."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-12 mb-3">
+                    <div class="testimonial-item d-flex gap-3">
+                        <img src="/assets/images/AK.jpg" class="testimonial-img rounded-circle" alt="Khách Hàng 3">
+                        <div class="testimonial-content">
+                            <h5>Trịnh Xuân Kiên</h5>
+                            <div class="testimonial-rating d-flex align-items-center">
+                                <div class="starts d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                            <p class="testimonial-text">"Beautiful room, but the price is a bit high compared to the
+                                quality of service."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <footer class="footer py-5">
+            <div class="row">
+                <div class="col-xl-6 col-12">
+                    <a href="homepage.html"
+                        class="logo d-flex align-items-center mb-0 mb-md-0 me-md-auto link-body-emphasis text-decoration-none pb-0">
+                        <span class=""><b class="nice">NICE</b><span class="booking">BOOKING</span></span>
+                    </a>
+                    <p class="slogan">
+                        Choose your place, get your chance
+                    </p>
+                    <div class="copyright pc">
+                        Copyright © 2024 nicebooking.com™. All rights reserved.
+                    </div>
+                </div>
+                <div class="col-xl-3 col-6">
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link" href="homepage.html" title="Home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" title="About us">About us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" title="Booking">Booking</a></li>
+                    </ul>
+                </div>
+                <div class="col-xl-3 col-6">
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link" href="#" title="Policies">Policies</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" title="Terms and conditions">Terms and
+                                conditions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" title="Parners">Parners</a></li>
+                    </ul>
+                </div>
+                <div class="copyright mb col-12">
+                    Copyright © 2024 nicebooking.com™. All rights reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header justify-content-between">
+                    <h5 class="modal-title" id="logoutModalLabel">Logout</h5>
+                    <button type="button" class="btn close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you want to logout?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="submit-modal btn btn-danger btn-submit">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

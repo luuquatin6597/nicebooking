@@ -1,0 +1,117 @@
+[
+    {
+        "hotelId": "7",
+        "price": {
+            "sale": "1800000",
+            "root": "2000000",
+            "subTotal": "5400000",
+            "tax": "540000",
+            "total": "5940000"
+        },
+        "payment": {
+            "creditCardNumber": "1231 3123 1231 2323",
+            "expirationDate": "12/25",
+            "securityCode": "111"
+        },
+        "createTime": 1726914139000,
+        "email": "duchieu111004@gmail.com",
+        "fullName": "Nguyễn Đức Hiếu",
+        "phone": "0915872606",
+        "dateStart": "21/09/2024",
+        "dateEnd": "24/09/2024",
+        "adultsQuantity": "1",
+        "childrenQuantity": "0"
+    },
+    {
+        "hotelId": "7",
+        "price": {
+            "sale": "1800000",
+            "root": "2000000",
+            "subTotal": "5400000",
+            "tax": "540000",
+            "total": "5940000"
+        },
+        "payment": {
+            "creditCardNumber": "1231 3123 1231 2323",
+            "expirationDate": "12/25",
+            "securityCode": "111"
+        },
+        "createTime": 1727000539000,
+        "email": "duchieu111004@gmail.com",
+        "fullName": "Nguyễn Đức Hiếu",
+        "phone": "0915872606",
+        "dateStart": "21/09/2024",
+        "dateEnd": "24/09/2024",
+        "adultsQuantity": "1",
+        "childrenQuantity": "0"
+    },
+    {
+        "hotelId": "7",
+        "price": {
+            "sale": "1800000",
+            "root": "2000000",
+            "subTotal": "5400000",
+            "tax": "540000",
+            "total": "5940000"
+        },
+        "payment": {
+            "creditCardNumber": "1212 1212 3123 1231",
+            "expirationDate": "12/25",
+            "securityCode": "111"
+        },
+        "createTime": 1727018539000,
+        "email": "duchieu111004@gmail.com",
+        "fullName": "Nguyễn Đức Hiếu",
+        "phone": "0915872606",
+        "dateStart": "21/09/2024",
+        "dateEnd": "24/09/2024",
+        "adultsQuantity": "1",
+        "childrenQuantity": "0"
+    },
+    {
+        "hotelId": "1",
+        "price": {
+            "sale": "2900000",
+            "root": "3200000",
+            "subTotal": "2900000",
+            "tax": "290000",
+            "total": "3190000"
+        },
+        "payment": {
+            "creditCardNumber": "1111 1111 1111 1111",
+            "expirationDate": "12/24",
+            "securityCode": "111"
+        },
+        "createTime": 1727072539000,
+        "email": "duchieu111004@gmail.com",
+        "fullName": "Nguyễn Đức Hiếu",
+        "phone": "0915872606",
+        "dateStart": "23/09/2024",
+        "dateEnd": "24/09/2024",
+        "adultsQuantity": "1",
+        "childrenQuantity": "0"
+    },
+    {
+        "hotelId": "0",
+        "price": {
+            "sale": "2300000",
+            "root": "2500000",
+            "subTotal": "2300000",
+            "tax": "230000",
+            "total": "2530000"
+        },
+        "payment": {
+            "creditCardNumber": "1111 1111 1111 1111",
+            "expirationDate": "12/25",
+            "securityCode": "111"
+        },
+        "createTime": 1727116492000,
+        "email": "duchieu111004@gmail.com",
+        "fullName": "Nguyễn Đức Hiếu",
+        "phone": "0915872606",
+        "dateStart": "23/09/2024",
+        "dateEnd": "24/09/2024",
+        "adultsQuantity": "1",
+        "childrenQuantity": "0"
+    }
+]

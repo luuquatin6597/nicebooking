@@ -1,0 +1,24 @@
+.back-btn {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blank-content img,
+.success-content img {
+  max-width: 500px;
+  display: block;
+  margin: auto;
+}
+
+.inforUser {
+  border-radius: 30px;
+}
+.inforUser .security-code,
+.inforUser .expiration-date {
+  width: 150px;
+}
+.inforUser .credit-card {
+  width: calc(100% - 300px - 2rem);
+}/*# sourceMappingURL=checkout.css.map */

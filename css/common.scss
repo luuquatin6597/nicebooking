@@ -1,0 +1,373 @@
+.logo .nice {
+    color: #0d6efd;
+    letter-spacing: 1px;
+}
+.logo .booking {
+    color: #ababab;
+    letter-spacing: -1px;
+}
+
+.header {
+    .inner {
+        @media screen and (max-width: 991px) {
+            justify-content: space-between;
+        }
+    }
+    .left,
+    .right {
+        width: 250px;
+    }
+    .center {
+        width: calc(100% - 500px);
+    }
+    .navbar {
+        .nav-item {
+            position: relative;
+            &:before {
+                content: "";
+                position: absolute;
+                bottom: 3px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 2px;
+                background-color: #0d6efd;
+                transition: all 0.2s;
+            }
+            a {
+                transition: all 0.2s;
+                font-size: 20px;
+            }
+            &:hover,
+            &.active {
+                a {
+                    color: #0d6efd;
+                }
+                &::before {
+                    width: calc(100% - 1rem);
+                }
+            }
+        }
+    }
+    #currentUser {
+        a {
+            padding: 8px 12px;
+            &::after {
+                display: none !important;
+            }
+        }
+        i {
+            width: auto;
+            height: fit-content;
+            display: flex;
+
+            &::before {
+                font-size: 35px;
+            }
+        }
+    }
+    @media screen and (min-width: 992px) {
+        .mb {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        .pc {
+            display: none;
+        }
+    }
+}
+
+#sidebarMenu {
+    max-width: 300px;
+}
+
+.footer {
+    margin: 0 auto;
+    @media screen and (max-width: 991px) {
+        padding-bottom: 1rem !important;
+    }
+    .logo {
+        font-size: 55px;
+        line-height: 1;
+        @media screen and (max-width: 991px) {
+            font-size: 40px;
+        }
+    }
+    .slogan {
+        font-size: 20px;
+        color: #ababab;
+        @media screen and (max-width: 991px) {
+            font-size: 14px;
+        }
+    }
+    .nav {
+        font-size: 18px;
+        @media screen and (max-width: 991px) {
+            font-size: 14px;
+        }
+        .nav-link {
+            color: #ababab;
+            transition: all 0.2s;
+            &:hover {
+                color: #000;
+            }
+            @media screen and (max-width: 991px) {
+                padding: 0;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .copyright {
+        font-size: 14px;
+        color: #ababab;
+        @media screen and (min-width: 992px) {
+            &.mb {
+                display: none !important;
+            }
+        }
+        @media screen and (max-width: 991px) {
+            font-size: 12px;
+            margin-top: 10px;
+            &.pc {
+                display: none !important;
+            }
+        }
+    }
+}
+
+.slider {
+    .slick {
+        &-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            background-color: #0d6efd;
+            border: unset;
+            height: 30px;
+            width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            cursor: pointer;
+        }
+        &-prev {
+            left: -15px;
+        }
+        &-next {
+            right: -15px;
+        }
+        &-dots {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 0;
+            left: 50%;
+            bottom: 10px;
+            transform: translateX(-50%);
+            gap: 10px;
+            li {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: #ffffff75;
+                button {
+                    opacity: 0;
+                    visibility: hiddne;
+                }
+                &.slick-active {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.card {
+    border-radius: 15px;
+
+    img {
+        height: 200px;
+        object-fit: cover;
+    }
+    .card {
+        &-label {
+            background-color: rgb(255, 46, 46);
+            color: #fff;
+            border-bottom-left-radius: 7px;
+        }
+        &-title {
+            overflow: hidden;
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            font-size: 16px;
+            @media screen and (min-width: 768px) {
+                font-size: 22px;
+            }
+        }
+        &-type {
+            color: rgb(163, 163, 163);
+            border-color: rgb(163, 163, 163);
+        }
+        &-price {
+            span {
+                &:not(.sale) {
+                    color: rgb(163, 163, 163);
+                }
+                &.sale {
+                    font-size: 20px;
+                    color: rgb(238, 39, 39);
+                }
+            }
+        }
+        &-info {
+            span {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+i.bi:before {
+    vertical-align: 0;
+}
+
+#product-detail-page,
+#checkout-page {
+    .date-picker {
+        .form-floating {
+            width: calc(50% - 0.5rem);
+            input {
+                height: auto;
+                padding-top: 35px !important;
+                border-radius: 10px;
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
+
+#category-page {
+    .date-picker {
+        .form-floating {
+            width: calc(50% - 0.5rem);
+            input {
+                min-height: auto;
+                height: 100%;
+                border-radius: 10px;
+                font-size: 1.25rem;
+                padding: 0.375rem 0.75rem 0.375rem 3.75rem;
+            }
+            label {
+                padding: 0 0.75rem;
+                transform: unset !important;
+                &::after {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+.good-price {
+    .card {
+        margin-bottom: 0.75rem;
+        @media screen and (min-width: 768px) {
+            margin-bottom: 1.5rem;
+        }
+        &-label {
+            border-top-left-radius: 7px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 7px;
+            font-size: 12px;
+        }
+        .card-img-top {
+            border-radius: 7px;
+            &:not(img) {
+                width: 150px;
+            }
+            img {
+                height: 150px;
+            }
+        }
+        .card-body {
+            padding-left: 0 !important;
+            width: calc(100% - 150px);
+        }
+        &-title {
+            font-size: 18px;
+        }
+    }
+}
+
+.testimonials {
+    .testimonial {
+        &-item {
+            img {
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+            }
+        }
+        &-content {
+            width: calc(100% - 150px - 1rem);
+        }
+        &-rating {
+            gap: 10px;
+            .starts {
+                gap: 5px;
+                i {
+                    width: auto;
+                    height: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    &::before {
+                        color: rgb(255, 201, 23);
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        &-text {
+            margin-top: 10px;
+        }
+    }
+}
+
+.also-like {
+    .slider {
+        &.card-list {
+            margin-left: -0.75rem;
+            margin-right: -0.75rem;
+        }
+        .slick-slide {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+        }
+        .slick-arrow {
+            &.slick-prev {
+                left: -11px;
+            }
+            &.slick-next {
+                right: -11px;
+            }
+        }
+        .slick-dots {
+            li {
+                background-color: #0d6dfd50;
+                &.slick-active {
+                    background-color: #0d6efd;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,106 @@
+.search-form {
+    max-width: 1100px;
+    border-radius: 39px;
+    padding: 1.25rem 1.5rem;
+
+    @media screen and (min-width: 992px) {
+        input,
+        .form-floating label,
+        .form-select,
+        button {
+            font-size: 1.25rem;
+        }
+
+        .search-options {
+            #slider-range {
+                width: 100%;
+                margin: 20px 40px 0 40px;
+                label {
+                    position: absolute;
+                    left: 50%;
+                    bottom: 5px;
+                    transform: translate(-50%, -50%);
+                    color: var(--bs-secondary);
+                    cursor: pointer;
+                }
+            }
+
+            .form-select {
+                width: 200px;
+            }
+        }
+        .mb {
+            display: none !important;
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        input,
+        .form-floating label,
+        .form-select,
+        button {
+            font-size: 18px;
+        }
+
+        .search-options {
+            flex-wrap: wrap;
+            #slider-range {
+                width: calc(100% - 200px - 1rem);
+                margin: 20px 40px 0 40px;
+                label {
+                    position: absolute;
+                    left: 50%;
+                    bottom: 5px;
+                    transform: translate(-50%, -50%);
+                    color: var(--bs-secondary);
+                    cursor: pointer;
+                }
+            }
+
+            .form-select {
+                width: 200px;
+            }
+        }
+        .pc {
+            display: none !important;
+        }
+    }
+}
+
+.blank-content {
+    img {
+        max-width: 500px;
+        display: block;
+        margin: auto;
+    }
+}
+
+.hotel-detail {
+    .hotel {
+        &-name {
+            h1 {
+                font-size: 35px;
+            }
+        }
+        &-rating {
+            gap: 10px;
+            .starts {
+                gap: 5px;
+                i {
+                    width: auto;
+                    height: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    &::before {
+                        color: rgb(255, 201, 23);
+                        font-size: 20px;
+                    }
+                }
+            }
+            .text {
+                font-size: 18px;
+            }
+        }
+    }
+}
